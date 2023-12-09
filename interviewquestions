@@ -1,0 +1,45 @@
+1.When should you use git push compared to when you use git pull?
+git push is used to upload content from one repository to another. For example, you can push content from a local repository into a remote repository.  
+
+git pull is used to retrieve and integrate content from another repository.  For example, you can pull content from a remote repository into a local repository.
+
+2.What command do you use to return to a previous commit?
+To return to a previous commit on a private, local repository, you’ll first want to run git log to pull up the branch’s history. Then, after identifying the version’s hash you want to go to, use the git reset command to change the repository to the commit.
+
+For a public, remote repository, the git revert command is a safer option. It’ll create a new commit with the previous edits rather than delete commits from the history.
+
+3.What methods do you use to clean up your feature branches?
+For this question, you can mention these three commands. 
+
+git merge --squash is a command that can merge multiple commits of a branch.
+git commit --fixup marks the commit as a fix of the previous commit.
+git rebase -i --autosquash is a rebase type of squash for merging multiple commits
+
+4.What are Git attributes used for?
+Git attributes allow programmers to try different merge strategies within the files or directories of a project. Attributes are set on paths so that when certain settings are applied along the path, the attribute can perform requests. Git attributes can also perform requests when exporting your project.
+
+5.Have you ever done debugging with Git? How did you do this?
+To debug with Git, you use git bisect to identify the first commit to introduce a bug by using automatic binary search. And git blame identifies the author of a commit, while git grep searches for any string or regular expression in any of the files in the staging area.
+
+6.Have you ever encountered a merge conflict? How did you go about resolving it?
+Merge conflicts happen when there are competing changes within the commits, and Git is unable to automatically determine which changes to use. Merge conflicts can be resolved by editing the file that has the conflict. And once the edits get made, add and commit the file.
+
+7.Explain Git hooks.
+Git hooks are custom scripts that can run when certain actions occur. There are two types: client-side hooks and server-side hooks. Git hooks can be written in any scripting programming language. They should be located within the hooks subdirectory of the .git directory.
+
+8.Mention some popular Git hosting services.
+GitHub
+SourceForge
+GitLab
+Bitbucket
+
+9.Different types of version control systems
+Local version control systems have a database that stores all file changes under revision control on disc in a special format.
+Centralized version control systems have a single repository, from which each user receives their working copy.
+Distributed version control systems contain multiple repositories, and different users can access each one with their working copy.
+
+10.What is a Git repository?
+Git repository refers to a place where all the Git files are stored. These files can either be stored on the local repository or on the remote repository.
+
+11.
+

@@ -1,0 +1,85 @@
+automation is the process of automating the creation of a software build and the associated processes including: compiling
+computer source code into binary code, packaging binary code, and running automated tests
+
+Here are the key reasons why build tools are essential in software development:
+1.Automating Repetitive Tasks
+2.Dependency Management
+3.version Control Integration
+4.Parallel Execution
+5.Efficient Testing
+6.Reproducibility
+7.. Continuous Integration and Deployment (CI/CD)
+8. Multi-Environment Support
+
+Maven is a popular and widely-used build automation and project management tool primarily used in Java development, although it can be
+adapted for other programming languages as well based on POM (project object model)
+
+Repository in Maven
+There are three types of maven repositories:-
+Local Repository: The developer's computer serves as the project's local repository and is where all project files are stored. The
+dependency jars are all stored in this repository.
+Central Repository: When dependencies are required but cannot be found in the local repository, the Maven community steps in to serve
+as the central repository. When necessary, Maven downloads the dependencies from this location.
+Remote Repository: When Maven needs to download dependencies, it uses the repository located on a web server, which is referred to as
+the remote repository. When something from the remote repository is needed, it is first downloaded to the local repository and then used.
+
+1.mvn validate
+Before diving into the build, Maven validates your project’s structure and configuration. This phase helps you catch early mistakes in your
+project setup.
+During the validate phase, Maven performs various checks, including
+Verifying that your project’s `pom.xml` file is valid and well-formed XML.
+Ensuring that the project’s dependencies are available and correctly specified.
+Validating any custom configuration or settings you’ve added to your project.
+This phase is particularly useful for detecting issues in your project’s metadata and configuration before they cause problems during the
+build process.
+To run the validate phase, use the following command
+
+2. mvn compile
+
+In the compile phase, your source code is compiled into bytecode. This is where your Java code gets transformed into .class files, making it
+ready for further processing.
+During compilation, Maven leverages the Java Compiler (javac) to translate your human-readable source code into bytecode that the Java
+Virtual Machine (JVM) can execute. This bytecode is then packaged into JAR files or other formats during later phases.
+Compilation is a critical step because it checks your code for syntax errors and ensures that your project’s source code is ready for testing
+and packaging.
+
+3.mvn test
+
+The test phase is where Maven runs your unit tests. These tests validate that your code behaves as expected, helping you catch bugs early
+in development. Maven uses testing frameworks like JUnit to execute these tests.
+During this phase, Maven
+Compiles your test source code and application source code (which was already compiled in the previous phase).
+Executes the tests, capturing and reporting test results.
+Stops the build if any tests fail, ensuring that your code meets the defined quality standards.
+
+4. mvn package
+
+After successful compilation and testing, Maven packages your code into a distributable format. The output could be a JAR, WAR, or any
+other format based on your project’s configuration. This phase creates the deployable artifact for your application
+
+5.mvn verify
+
+During this phase, Maven typically performs the following verifications
+Code quality checks using tools like SonarQube or Checkstyle.
+Code coverage analysis to determine how much of your codebase is covered by tests.
+Ensuring that your project adheres to defined quality standards and best practices.
+
+6. mvn install
+
+Once your code has passed all previous phases, it’s time to install it locally. Maven places the built artifact into your local repository, making
+it available for other projects on your local machine. This allows you to use your project as a dependency in other projects.
+
+7. mvn deploy
+
+The deployment phase typically involves
+Uploading your project’s artifacts to a remote
+Making these artifacts available to other developers and projects.
+Ensuring that the artifacts are properly versioned and can be easily referenced by other projects as dependencies.
+
+mvn clean
+
+During the clean phase, Maven performs several critical actions:
+Deletes the target directory: This directory holds all the build output from previous runs, including compiled code, JARs, and other
+generated files. Removing it ensures you’re working with a clean project directory.
+Cleans up any resources generated during the previous build, such as temporary files or cached data.
+Prepares the project for a fresh build, erasing any remnants of previous builds
